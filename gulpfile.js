@@ -230,7 +230,7 @@ exports.build = series(
     compressImages,
     // copyUnprocessedAssetsForProd
 );
-exports.default = series(
+exports.serve = series(
     lintJS,
     lintCSS,
     validateHTML,
@@ -238,4 +238,4 @@ exports.default = series(
     serve
 );
 exports.clean = clean;
-exports.listTasks = listTasks;
+exports.default = listTasks;
