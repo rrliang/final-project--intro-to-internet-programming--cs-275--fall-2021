@@ -152,20 +152,19 @@ let serve = () => {
         }
     });
 
-    watch(paths.html.input,
+    watch(PATHS.html.input,
         series(validateHTML)
     ).on(`change`, reload);
 
-    watch(paths.js.input,
+    watch(PATHS.js.input,
         series(lintJS, transpileJSForDev)
     ).on(`change`, reload);
 
-    watch(paths.css.input,
+    watch(PATHS.css.input,
         series(lintCSS)
     ).on(`change`, reload);
 
-    watch(paths.img.input
-    ).on(`change`, reload);
+    watch(PATHS.img.input).on(`change`, reload);
 };
 
 async function clean() {
@@ -227,7 +226,7 @@ exports.build = series(
     compressCSS,
     compressHTML,
     transpileJSForProd,
-    compressImages,
+    compressImages
     // copyUnprocessedAssetsForProd
 );
 exports.serve = series(
