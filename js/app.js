@@ -20,10 +20,9 @@ window.onload = () => {
 
     let moveImages = (pixelsMoved) => {
         let currentLeft = parseInt((window.getComputedStyle(PARENT)).getPropertyValue(`left`));
-        console.log(currentLeft);
+        // console.log(currentLeft);
         if (currentLeft === 510 || currentLeft === -70 || currentLeft === -650
             || currentLeft === -1230 || currentLeft === -1810 || currentLeft === -1230) {
-            console.log(currentLeft);
             MOVE.style.left = currentLeft + pixelsMoved + "px";
             PARENT.classList.add(`move`);
             if (pixelsMoved < 0) {
@@ -42,5 +41,13 @@ window.onload = () => {
     LEFTBUTTON.addEventListener(`click`, () => {
         moveImages(WIDTH);
         checkSlide();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "ArrowRight" && !RIGHTBUTTON.classList.contains(`hidden`)) {
+            RIGHTBUTTON.click();
+        } else if (e.key === "ArrowLeft" && !LEFTBUTTON.classList.contains(`hidden`)) {
+            LEFTBUTTON.click();
+        }
     });
 };
