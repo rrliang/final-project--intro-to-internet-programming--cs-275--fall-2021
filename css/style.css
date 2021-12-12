@@ -8,7 +8,8 @@ body {
 }
 
 h1 {
-  display: absolute;
+  display:
+  position: relative;
   font-family: Rubik, sans-serif;
   text-align: center;
   font-size: 2rem;
@@ -73,7 +74,6 @@ h1 {
 
 .parent {
   z-index: 0;
-  /* background-color: #f8f8f8; */
   position: relative;
   white-space: nowrap;
   width: 1000px;
