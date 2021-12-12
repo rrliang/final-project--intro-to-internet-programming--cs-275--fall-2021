@@ -1,0 +1,125 @@
+body {
+  font-size: 16px;
+  line-height: (16*1.125) px;
+  color: black;
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  display: absolute;
+  font-family: Rubik, sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  line-height: (2rem*1.125) px;
+}
+
+.button {
+  background-color: white;
+  margin: 0;
+  position: absolute;
+  z-index: 10;
+  width: 40px;
+  height: 50px;
+  top: 50%;
+  opacity: .8;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+#left-button {
+  left: 493px;
+}
+
+#right-button {
+  right: -99px;
+}
+
+.left-rectangle {
+  top: 80px;
+  z-index: 5;
+  position: absolute;
+  height: 500px;
+  width: 50%;
+  /* border: solid pink 1px; */
+  background-color: white;
+  left: -9px;
+}
+
+.back-rectangle {
+  top: 108px;
+  z-index: 0;
+  background-color: #f8f8f8;
+  position: absolute;
+  height: 289px;
+  width: 100%;
+  /* border: solid black 1px; */
+  left: 49%;
+}
+
+.right-rectangle {
+  top: 80px;
+  position: absolute;
+  z-index: 5;
+  height: 500px;
+  width: 600px;
+  /* border: solid pink 1px; */
+  background-color: white;
+  left: 110%;
+}
+
+.parent {
+  z-index: 0;
+  /* background-color: #f8f8f8; */
+  position: relative;
+  white-space: nowrap;
+  width: 1000px;
+  left: 510px;
+}
+
+.element {
+  text-align: left;
+  z-index: 0;
+  width: 500px;
+  height: 285px;
+  background-color: #f1f1f1;
+  display: inline-block;
+  vertical-align: top;
+  word-wrap: break-word;
+  white-space: normal;
+  padding-right: 15px;
+  margin: 30px;
+}
+
+h2 {
+  font-weight: 700;
+  padding-top: 20px;
+  font-size: 1rem;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding-right: 15px;
+}
+
+img {
+  float: left;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 18px 15px;
+}
+
+.move {
+  transition: all .5s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
