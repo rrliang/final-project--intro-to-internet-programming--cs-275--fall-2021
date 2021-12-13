@@ -1,9 +1,8 @@
 window.onload = () => {
     const LEFTBUTTON = document.getElementById(`left-button`);
     const RIGHTBUTTON = document.getElementById(`right-button`);
-    const PARENT = document.getElementsByClassName(`parent`)[0];
-    const MOVE = document.getElementsByClassName(`move`)[0];
-    const WIDTH = 580;
+    const PARENT = document.getElementsByClassName(`all-slides`)[0];
+    let width = 0;
     let index = 0;
 
     let checkSlide = () => {
@@ -17,36 +16,25 @@ window.onload = () => {
         }
     };
 
-
-    let moveImages = (pixelsMoved) => {
-        let currentLeft = parseInt((window.getComputedStyle(PARENT)).getPropertyValue(`left`));
-        // console.log(currentLeft);
-        if (currentLeft === 510 || currentLeft === -70 || currentLeft === -650
-            || currentLeft === -1230 || currentLeft === -1810 || currentLeft === -1230) {
-            MOVE.style.left = currentLeft + pixelsMoved + "px";
-            PARENT.classList.add(`move`);
-            if (pixelsMoved < 0) {
-                index += 1;
-            } else {
-                index -= 1;
-            }
-        }
-    };
-
     RIGHTBUTTON.addEventListener(`click`, () => {
-        moveImages(-WIDTH);
+        width -= 639;
+        PARENT.style.transform = `translate(`+width+`px)`;
+        index += 1;
         checkSlide();
     });
 
     LEFTBUTTON.addEventListener(`click`, () => {
-        moveImages(WIDTH);
+        width += 639;
+        PARENT.style.transform = `translate(`+width+`px)`;
+        index -= 1;
         checkSlide();
     });
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "ArrowRight" && !RIGHTBUTTON.classList.contains(`hidden`)) {
+    document.addEventListener(`keydown`, (e) => {
+        if (e.key === `ArrowRight` && !RIGHTBUTTON.classList.contains(`hidden`)) {
             RIGHTBUTTON.click();
-        } else if (e.key === "ArrowLeft" && !LEFTBUTTON.classList.contains(`hidden`)) {
+        } else if (e.key === `ArrowLeft` && !LEFTBUTTON.classList.contains(
+            `hidden`)) {
             LEFTBUTTON.click();
         }
     });

@@ -1,19 +1,19 @@
 body {
   font-size: 16px;
-  line-height: (16*1.125) px;
+  line-height: calc(16px * 1.125);
   color: black;
   position: absolute;
   overflow: hidden;
   text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 h1 {
-  display:
-  position: relative;
   font-family: Rubik, sans-serif;
-  text-align: center;
   font-size: 2rem;
-  line-height: (2rem*1.125) px;
+  line-height: calc(2rem * 1.125);
 }
 
 .button {
@@ -23,7 +23,7 @@ h1 {
   z-index: 10;
   width: 40px;
   height: 50px;
-  top: 50%;
+  top: 199.9px;
   opacity: .8;
 }
 
@@ -32,66 +32,58 @@ h1 {
 }
 
 #left-button {
-  left: 493px;
+  left: calc(50vw - 560px / 2);
 }
 
 #right-button {
-  right: -99px;
+  left: calc(50vw + 569px / 2);
 }
 
 .left-rectangle {
-  top: 80px;
+  top: 0;
   z-index: 5;
   position: absolute;
   height: 500px;
-  width: 50%;
-  /* border: solid pink 1px; */
+  width: calc(50vw - 560px / 2);
   background-color: white;
-  left: -9px;
-}
-
-.back-rectangle {
-  top: 108px;
-  z-index: 0;
-  background-color: #f8f8f8;
-  position: absolute;
-  height: 289px;
-  width: 100%;
-  /* border: solid black 1px; */
-  left: 49%;
+  left: 0%;
 }
 
 .right-rectangle {
-  top: 80px;
+  top: 0;
   position: absolute;
   z-index: 5;
   height: 500px;
-  width: 600px;
-  /* border: solid pink 1px; */
+  width: 10000px;
   background-color: white;
-  left: 110%;
+  left: calc(50vw + 709px / 2);
 }
 
-.parent {
+.all-slides {
   z-index: 0;
   position: relative;
   white-space: nowrap;
   width: 1000px;
-  left: 510px;
+  left: calc(50vw - 560px / 2);
+  display: block;
 }
 
-.element {
+.slide {
+  overflow: hidden;
   text-align: left;
   z-index: 0;
   width: 500px;
   height: 285px;
   background-color: #f1f1f1;
+  border-style: solid;
+  border-color: #f8f8f8;
+  border-width: 0 60px;
   display: inline-block;
   vertical-align: top;
   word-wrap: break-word;
   white-space: normal;
   padding-right: 15px;
-  margin: 30px;
+  margin: 0;
 }
 
 h2 {
@@ -110,7 +102,6 @@ p {
 
 img {
   float: left;
-  display: inline-block;
   vertical-align: middle;
   padding: 18px 15px;
 }

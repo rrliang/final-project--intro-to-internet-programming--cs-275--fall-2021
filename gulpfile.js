@@ -128,14 +128,6 @@ let compressImages = () => {
         .pipe(dest(PATHS.img.output));
 };
 
-// let copyUnprocessedAssetsForProd = () => {
-//     return src([
-//         `img/*.svg`
-//     ], {dot: true})
-//         .pipe(dest(`prod/img`));
-// };
-//WHAT ASSETS WILL BE UNPROCCESSED? KINDA CONFUSED
-
 let serve = () => {
     browserSync({
         notify: true,
@@ -227,7 +219,6 @@ exports.build = series(
     compressHTML,
     transpileJSForProd,
     compressImages
-    // copyUnprocessedAssetsForProd
 );
 exports.serve = series(
     lintJS,
